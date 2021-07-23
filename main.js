@@ -4,6 +4,7 @@ http = require("http"),
 httpStatus = require("http-status-codes"),
 app = http.createServer();
 app.on("request", (req, res) => { 
+    //logging request data
      console.log(req.method);
      console.log(req.url);
      console.log(req.headers)
