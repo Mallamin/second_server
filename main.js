@@ -3,7 +3,10 @@ const port = 3000,
 http = require("http"),
 httpStatus = require("http-status-codes"),
 app = http.createServer();
-app.on("request", (req, res) => {
+app.on("request", (req, res) => { 
+     console.log(req.method);
+     console.log(req.url);
+     console.log(req.headers)
 res.writeHead(httpStatus.OK, {
 "Content-Type": "text/html"
 });
