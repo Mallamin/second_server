@@ -5,13 +5,18 @@ httpStatus = require("http-status-codes"),
 app = http.createServer();
 app.on("request", (req, res) => { 
     //logging request data
-     console.log(req.method);
+     /*console.log(req.method);
      console.log(req.url);
-     console.log(req.headers)
-     //Custom wrapper function
+     console.log(req.headers)*/
+
+     //Custom wrapper function to convert objects to more readeable strings
      const getJSONString = obj => {
         return JSON.stringify(obj, null, 2);
         };
+
+        console.log(`Method:${getJSONString(req.method)}`)
+        console.log(`URL: ${getJSONString(req.url)}`)
+        console.log(`Headers: ${getJSONString(req.headers)}`)
 res.writeHead(httpStatus.OK, {
 "Content-Type": "text/html"
 });
