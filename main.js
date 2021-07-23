@@ -8,6 +8,10 @@ app.on("request", (req, res) => {
      console.log(req.method);
      console.log(req.url);
      console.log(req.headers)
+     //Custom wrapper function
+     const getJSONString = obj => {
+        return JSON.stringify(obj, null, 2);
+        };
 res.writeHead(httpStatus.OK, {
 "Content-Type": "text/html"
 });
