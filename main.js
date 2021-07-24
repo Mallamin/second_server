@@ -8,7 +8,6 @@ app.on("request", (req, res) => {
 var body = [];
 req.on("data", (bodyData) => {
 body.push(bodyData);
-
 });
 req.on("end", () => {
 body = Buffer.concat(body).toString();
