@@ -4,6 +4,16 @@ http = require("http"),
 httpStatus = require("http-status-codes"),
 app = http.createServer();
 app.on("request", (req, res) => { 
+ //request event handlers
+var body = [];
+req.on("data", (bodyData) => {
+body.push(bodyData);
+
+});
+req.on("end", () => {
+body = Buffer.concat(body).toString();
+console.log(`Request Body Contents: ${body}`)
+})
     //logging request data
      /*console.log(req.method);
      console.log(req.url);
